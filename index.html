@@ -1,23 +1,21 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@v0.185.1/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.185.1/examples/jsm/"
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+   <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@v0.185.1/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.185.1/examples/jsm/"
+  }
+}
+</script>
   </head>
-
   <body>
     <main>
-      <div class="game-ui" id="game-ui-container">
-        <div class="game-ui-section" id="warp-section">
-          <input type="range" min = "0" max = "4" list="values" />
-        </div>
+      <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+        <div class="overlay" id="pointer">+</div>
       </div>
     </main>
     <script type="module" src="main.js"></script>

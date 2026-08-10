@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   margin: 0;
   padding: 0;
 }
@@ -7,24 +6,16 @@ canvas {
   display: block;
 }
 
-datalist {
-  display: flex;
+#game-container{
+  display: grid;
+  place-items: center;
 }
 
-.game-ui {
-  background-color: #2e2e2eec;
-  color: white;
-  /* backdrop-filter: blur(40px) saturate(0.5); */
-}
-
-#game-ui-container {
+.overlay{
+  user-select: none;
   position: absolute;
-  /* right: 0; */
-  /* height: 100%; */
-  width: 100%;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+}
+
+#pointer{
+  font-size: 100px;
 }
