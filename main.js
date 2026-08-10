@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import { ImprovedNoise } from "https://unpkg.com/three/examples/jsm/math/ImprovedNoise.js";
 
-let dim = { x: 200, y: 200, z: 200 };
+let dim = { x: 150, y: 150, z: 150 };
 let spawn = new THREE.Vector3(
   Math.random() * dim.x,
   dim.z + 50,
