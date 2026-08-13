@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { mergeVertices } from "three/addons/utils/BufferGeometryUtils.js";
 import { ImprovedNoise } from "https://unpkg.com/three/examples/jsm/math/ImprovedNoise.js";
 
-let dim = { x: 150, y: 150, z: 150 };
+let dim = { x: 200, y: 200, z: 200 };
 let spawn = new THREE.Vector3(
   Math.random() * dim.x,
   dim.z + 50,
@@ -165,6 +165,7 @@ function render() {
   camera.rotation.order = "YXZ";
   camera.rotation.y += mouseDelta.x * -0.0015;
   camera.rotation.x += mouseDelta.y * -0.0015;
+  camera.rotation.x = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, camera.rotation.x))
   mouseDelta.x = 0;
   mouseDelta.y = 0;
   let movementDir = new THREE.Vector3(0, 0, 0);
@@ -401,9 +402,12 @@ renderer.domElement.addEventListener("pointerdown", (event) => {
   }
 });
 
-// window.addEventListener("scroll", (event) => {
-//   console.log(window.scrollX);
-// });
+window.addEventListener("wheel", (event) => {
+  // console.log(window.scrollX);
+  camera.fov += event.deltaY / 10;
+  camera.fov = Math.max(Math.min(camera.fov, 140), 10)
+  camera.updateProjectionMatrix();
+});
 
 window.addEventListener("resize", () => {
   const w = window.innerWidth;
